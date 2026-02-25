@@ -4,9 +4,7 @@ Reusable skills for Claude Code and other AI coding agents. Each skill is a self
 
 ## What's a Skill?
 
-A skill is a markdown file that gives an AI agent structured instructions for a specific capability. Drop it into your `.claude/skills/` directory (or equivalent) and the agent learns the protocol.
-
-Skills are **prompts, not code**. They define the *what* and *why* — the agent figures out the *how* using its available tools. Some skills include optional Python utilities for heavy lifting (parsing, file I/O), but the core is always the SKILL.md.
+A skill is a markdown file that gives an AI agent structured instructions for a specific capability. Skills are **prompts, not code**. They define the *what* and *why* — the agent figures out the *how* using its available tools.
 
 ## Available Skills
 
@@ -16,35 +14,13 @@ Skills are **prompts, not code**. They define the *what* and *why* — the agent
 
 ## Usage
 
-### Claude Code
+Point your agent at this repo and ask it to evaluate the skills and adapt them for your codebase. Something like:
 
-Copy the skill directory into your project:
+> Read https://github.com/zackham/agent-skills and evaluate which skills would be useful here. Adapt any relevant ones for our project.
 
-```bash
-cp -r handoff/ your-project/.claude/skills/handoff/
-```
+The agent will read the SKILL.md files, understand the protocols, and integrate what makes sense for your setup. It'll handle the adaptation — file paths, project conventions, tooling specifics.
 
-Reference it in your project's `CLAUDE.md`:
-
-```markdown
-## handoff & recovery
-
-> skill: `.claude/skills/handoff/`
-
-Session continuation across context limits and voluntary compaction.
-```
-
-### Other Agents
-
-The SKILL.md files are agent-agnostic markdown. Adapt the protocol to your agent's tool interface. The core ideas (layered extraction, forward-looking briefings, unfilterable hazards) apply regardless of platform.
-
-## Contributing
-
-Open to contributions. Each skill should:
-- Be self-contained in its own directory
-- Have a `SKILL.md` with clear triggers, protocol, and examples
-- Solve a real problem you've hit in practice
-- Be agent-agnostic where possible (Claude Code specifics in adaptation guides)
+If you'd rather do it manually: copy a skill directory into `.claude/skills/` and reference it in your `CLAUDE.md`.
 
 ## License
 
