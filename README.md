@@ -10,6 +10,7 @@ A skill is a markdown file that gives an AI agent structured instructions for a 
 
 | Skill | Description |
 |-------|-------------|
+| [build-llm-docs](build-llm-docs/) | Generate high-quality CLAUDE.md files via multi-agent exploration, consolidation, and review. |
 | [council](council/) | Multi-model consensus for tough decisions. Fans out to frontier models via OpenRouter and synthesizes. |
 | [handoff](handoff/) | Session handoff and crash recovery. Bridges context across session boundaries. |
 
